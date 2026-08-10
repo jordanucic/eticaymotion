@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacidad vs Seguridad, 2026</title>
+    
+    <style>
+        /* Reseteo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Usamos una tipografía sans-serif neutral similar a la referencia */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden; /* Evita el scroll en el body, lo manejamos en el panel derecho */
+            color: #000;
+        }
+
+        /* ----- PANEL IZQUIERDO (Textos y Ficha Técnica) ----- */
+        .left-panel {
+            width: 320px;
+            min-width: 320px;
+            background-color: #fff;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.05); /* Sutil sombra para separar del panel derecho */
+        }
+
+        /* Título de la obra */
+        .motion-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        /* Autores / Integrantes */
+        .motion-authors {
+            font-size: 0.9rem;
+            color: #0000EE; /* Azul típico de enlaces */
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .motion-authors a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .motion-authors a:hover {
+            text-decoration: underline;
+        }
+
+        /* Ficha Técnica */
+        .technical-sheet {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .technical-sheet p {
+            margin-bottom: 12px;
+        }
+
+        .technical-sheet strong {
+            font-weight: bold;
+        }
+
+        .technical-sheet a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .technical-sheet a:hover {
+            text-decoration: underline;
+        }
+
+        /* Enlace "All works" */
+        .all-works-link {
+            margin-top: auto; /* Empuja el enlace al fondo del contenedor */
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .all-works-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ----- PANEL DERECHO (Still y Video) ----- */
+        .right-panel {
+            flex: 1;
+            overflow-y: auto; /* Permite el scroll solo en esta área */
+            background-color: #111;
+            scroll-behavior: smooth;
+        }
+
+        /* Imagen Still a pantalla completa */
+        .still-image-container {
+            width: 100%;
+            height: 100vh; /* Ocupa exactamente el 100% del alto de la pantalla */
+            position: relative;
+        }
+
+        .still-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Contenedor del video incrustado */
+        .video-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background-color: #1a1a1a;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16/9; /* Mantiene la proporción de 1920x1080 */
+            background-color: #000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Animación para el indicador de scroll */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        /* Responsividad básica para pantallas pequeñas */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                overflow: auto;
+            }
+            .left-panel {
+                width: 100%;
+                min-width: 100%;
+                height: auto;
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+            .right-panel {
+                overflow-y: visible;
+            }
+            .still-image-container {
+                height: 60vh;
+            }
+            .video-container {
+                min-height: auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="left-panel">
+        <div>
+            <!-- Título -->
+            <h1 class="motion-title">Privacidad vs Seguridad, 2026</h1>
+            
+            <!-- Autores / Pseudónimos -->
+            <div class="motion-authors">
+                <a href="https://instagram.com/" target="_blank">Ana López (AnaAnimates)</a> &amp; 
+                <a href="https://behance.net/" target="_blank">Carlos Ruiz</a>
+            </div>
+
+            <!-- Ficha Técnica -->
+            <div class="technical-sheet">
+                <p>
+                    <strong>Tema:</strong> Exploración visual sobre los límites de la vigilancia masiva en la era digital frente al derecho individual a la privacidad, un conflicto ético contemporáneo.
+                </p>
+                <p>
+                    <strong>Técnica:</strong> Animación 2D y Motion Graphics narrativo. Formato MP4 a 1920x1080px.
+                </p>
+                <p>
+                    <strong>Recursos:</strong><br>
+                    - Música: <a href="https://pixabay.com/music/" target="_blank">"Tension Maker" (Licencia Libre)</a><br>
+                    - Vectores base: <a href="https://freepik.com/" target="_blank">Freepik - Modificados</a>
+                </p>
+                <p>
+                    <strong>Años de producción:</strong> 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- Enlace para volver a la galería -->
+        <a href="index.html" class="all-works-link">All works</a>
+    </div>
+
+    <!-- PANEL DERECHO (Deslizable) -->
+    <div class="right-panel">
+        
+        <!-- Primera vista: Imagen Fija (Still) -->
+        <div class="still-image-container">
+            <!-- Reemplaza el src por el still de tu proyecto -->
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Still de la animación">
+            <div class="scroll-indicator">Desliza para ver el video ↓</div>
+        </div>
+
+        <!-- Segunda vista: Video Incrustado -->
+        <div class="video-container">
+            <div class="video-wrapper">
+                <!-- Aquí va el iframe de YouTube, Vimeo, o la etiqueta <video> local -->
+                <!-- Ejemplo con etiqueta de video genérica -->
+                <video width="100%" height="100%" controls poster="https://via.placeholder.com/1920x1080/000/fff?text=Cargando+Video...">
+                    <source src="tu-video-20seg.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

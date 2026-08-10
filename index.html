@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Integrador Final | UCIC</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables de colores institucionales */
+        :root {
+            --ucic-navy: #0B2347;
+            --ucic-teal: #009CA6;
+            --text-dark: #333333;
+            --bg-light: #FAFAFA;
+        }
+
+        /* Reseteo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navegación - Alineada a la derecha */
+        header {
+            background-color: var(--ucic-navy);
+            color: white;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-end; /* Pega todo el contenido a la derecha */
+            height: 90px;
+        }
+
+        .logo-container {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        nav a.active {
+            background-color: var(--ucic-teal);
+        }
+
+        nav a:hover:not(.active) {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Sección Hero / Introducción */
+        .hero {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--ucic-navy);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .hero p.lead {
+            font-weight: 600;
+            color: var(--ucic-teal);
+            text-align: center;
+        }
+
+        /* Galería de Videos (Grilla) */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tarjetas de video */
+        .video-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd;
+            background-image: url('https://via.placeholder.com/600x400/0B2347/FFFFFF?text=Click+para+ver+Dilema');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 156, 166, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .video-info {
+            padding: 20px;
+            border-top: 4px solid var(--ucic-teal);
+        }
+
+        .video-info h3 {
+            font-size: 1.2rem;
+            color: var(--ucic-navy);
+            margin-bottom: 10px;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--ucic-navy);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera Institucional -->
+    <header>
+        <div class="logo-container">
+            <!-- Logo actualizado desde URL externa -->
+            <img src="https://static.wixstatic.com/media/7f282e_67cd47287e73472bb901a7ab4f28dd1d~mv2.png/v1/crop/x_156,y_739,w_1813,h_681/fill/w_360,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/269.png" alt="Logo UCIC">
+        </div>
+        <nav>
+            <a href="#" class="active">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <!-- Enlace actualizado a la oferta educativa oficial -->
+            <a href="https://www.ucic.edu.mx/" target="_blank">Oferta Educativa</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Introducción -->
+    <main>
+        <section class="hero">
+            <h2>Proyecto Integrador Final</h2>
+            <p class="lead">Ingeniería en Animación | Dilemas Éticos y Motion Graphics</p>
+            <p>
+                Bienvenidos a la muestra de trabajos desarrollados por los alumnos de la UCIC. Como parte del Proyecto Integrador Final, colaborando en las materias de Dilemas Éticos y Motion Graphics, cada equipo ha desarrollado una serie de cuatro motion graphics narrativos de 20 segundos cada uno.
+            </p>
+            <p>
+                El objetivo principal de estos ejercicios es traducir conceptos éticos complejos a narrativas audiovisuales breves, claras y visualmente atractivas, utilizando las herramientas y metodologías propias del motion graphics profesional. Los invitamos a explorar cómo nuestros estudiantes logran comunicar un conflicto ético y sus implicaciones a través de la animación.
+            </p>
+        </section>
+
+        <!-- Galería de Proyectos -->
+        <section id="proyectos" class="gallery-section">
+            <div class="gallery-grid">
+                
+                <!-- Tarjeta de Video 1 -->
+                <a href="detalle-video-1.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 1: Privacidad vs Seguridad</h3>
+                        <p>Duración: 20 segundos. Una exploración visual sobre los límites de la vigilancia en la era digital.</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 2 -->
+                <a href="detalle-video-2.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 2: Inteligencia Artificial</h3>
+                        <p>Duración: 20 segundos. ¿Quién es responsable cuando un algoritmo toma una decisión perjudicial?</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 3 -->
+                <a href="detalle-video-3.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 3: Bioética y Edición Genética</h3>
+                        <p>Duración: 20 segundos. Dilemas sobre la intervención científica en el desarrollo humano.</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 4 -->
+                <a href="detalle-video-4.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 4: Impacto Ambiental</h3>
+                        <p>Duración: 20 segundos. Intereses económicos en tensión con la preservación de los ecosistemas.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 UCIC - Universidad de Ciencias. Trabajos de Ingeniería en Animación.</p>
+    </footer>
+
+</body>
+</html>
