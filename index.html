@@ -141,6 +141,7 @@
             width: 100%;
             height: 250px;
             background-color: #ddd;
+            /* La imagen de fondo por defecto se mantendrá si un GIF falla en cargar */
             background-image: url('https://via.placeholder.com/600x400/0B2347/FFFFFF?text=Click+para+ver+Dilema');
             background-size: cover;
             background-position: center;
@@ -206,8 +207,6 @@
         <nav>
             <a href="#" class="active">Inicio</a>
             <a href="#proyectos">Proyectos</a>
-            <!-- Enlace actualizado a la oferta educativa oficial -->
-            <a href="https://www.ucic.edu.mx/" target="_blank">Oferta Educativa</a>
         </nav>
     </header>
 
@@ -217,10 +216,10 @@
             <h2>Proyecto Integrador Final</h2>
             <p class="lead">Ingeniería en Animación | Dilemas Éticos y Motion Graphics</p>
             <p>
-                Bienvenidos a la muestra de trabajos desarrollados por los alumnos de la UCIC. Como parte del Proyecto Integrador Final, colaborando en las materias de Dilemas Éticos y Motion Graphics, cada equipo ha desarrollado una serie de cuatro motion graphics narrativos de 20 segundos cada uno.
+                Bienvenidos a la muestra de trabajos desarrollados por los alumnos de la UCIC. Como parte del Proyecto Integrador, colaborando en las materias de Dilemas Éticos y Motion Graphics, cada equipo ha desarrollado una serie de motion graphics.
             </p>
             <p>
-                El objetivo principal de estos ejercicios es traducir conceptos éticos complejos a narrativas audiovisuales breves, claras y visualmente atractivas, utilizando las herramientas y metodologías propias del motion graphics profesional. Los invitamos a explorar cómo nuestros estudiantes logran comunicar un conflicto ético y sus implicaciones a través de la animación.
+                El objetivo principal de estos ejercicios es traducir conceptos éticos complejos a narrativas audiovisuales breves, claras y visualmente atractivas, utilizando las herramientas y metodologías del motion. Los invitamos a explorar cómo nuestros estudiantes logran comunicar un conflicto ético y sus implicaciones a través de la animación.
             </p>
         </section>
 
@@ -229,46 +228,90 @@
             <div class="gallery-grid">
                 
                 <!-- Tarjeta de Video 1 -->
-                <a href="detalle-video-1.html" target="_blank" class="video-card">
-                    <div class="video-thumbnail">
+                <a href="video1.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min1.gif');">
                         <div class="play-icon">▶</div>
                     </div>
                     <div class="video-info">
-                        <h3>Equipo 1: Privacidad vs Seguridad</h3>
-                        <p>Duración: 20 segundos. Una exploración visual sobre los límites de la vigilancia en la era digital.</p>
+                        <h3>Equipo 1: Tokenismo</h3>
+                        <p>Duración: 2:10</p>
                     </div>
                 </a>
 
                 <!-- Tarjeta de Video 2 -->
-                <a href="detalle-video-2.html" target="_blank" class="video-card">
-                    <div class="video-thumbnail">
+                <a href="video2.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min2.gif');">
                         <div class="play-icon">▶</div>
                     </div>
                     <div class="video-info">
-                        <h3>Equipo 2: Inteligencia Artificial</h3>
-                        <p>Duración: 20 segundos. ¿Quién es responsable cuando un algoritmo toma una decisión perjudicial?</p>
+                        <h3>Equipo 2:El dilema del artista independiente (Derechos de Autor)</h3>
+                        <p>Duración: 1:55</p>
                     </div>
                 </a>
 
                 <!-- Tarjeta de Video 3 -->
-                <a href="detalle-video-3.html" target="_blank" class="video-card">
-                    <div class="video-thumbnail">
+                <a href="video3.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min3.gif');">
                         <div class="play-icon">▶</div>
                     </div>
                     <div class="video-info">
-                        <h3>Equipo 3: Bioética y Edición Genética</h3>
-                        <p>Duración: 20 segundos. Dilemas sobre la intervención científica en el desarrollo humano.</p>
+                        <h3>Equipo 3: I.A. Generativa</h3>
+                        <p>Duración: 3:31</p>
                     </div>
                 </a>
 
                 <!-- Tarjeta de Video 4 -->
-                <a href="detalle-video-4.html" target="_blank" class="video-card">
-                    <div class="video-thumbnail">
+                <a href="video4.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min4.gif');">
                         <div class="play-icon">▶</div>
                     </div>
                     <div class="video-info">
-                        <h3>Equipo 4: Impacto Ambiental</h3>
-                        <p>Duración: 20 segundos. Intereses económicos en tensión con la preservación de los ecosistemas.</p>
+                        <h3>Equipo 4: Derechos de Autor</h3>
+                        <p>Duración: 1:46</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 5 -->
+                <a href="video5.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min5.gif');">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 5: Acuerdos de confidencialidad</h3>
+                        <p>Duración: 4 Videos de 36 segundos</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 6 -->
+                <a href="detalle-video-6.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min6.gif');">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 6: Automatización Laboral</h3>
+                        <p>Duración: 20 segundos. El reemplazo humano y la responsabilidad social corporativa.</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 7 -->
+                <a href="detalle-video-7.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min7.gif');">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 7: Derechos Animales</h3>
+                        <p>Duración: 20 segundos. El uso de seres vivos en pruebas científicas e industriales.</p>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Video 8 -->
+                <a href="detalle-video-8.html" target="_blank" class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('min8.gif');">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Equipo 8: Realidad Virtual</h3>
+                        <p>Duración: 20 segundos. Adicción tecnológica y la pérdida de conexión con el mundo real.</p>
                     </div>
                 </a>
 
