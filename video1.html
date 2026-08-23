@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenismo, 2026</title>
+    
+    <style>
+        /* Reseteo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            color: #000;
+        }
+
+        /* ----- PANEL IZQUIERDO (Textos y Ficha Técnica) ----- */
+        .left-panel {
+            width: 320px;
+            min-width: 320px;
+            background-color: #fff;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.05);
+        }
+
+        .motion-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .motion-authors {
+            font-size: 0.9rem;
+            color: #0000EE;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .motion-authors a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .motion-authors a:hover {
+            text-decoration: underline;
+        }
+
+        .technical-sheet {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .technical-sheet p {
+            margin-bottom: 12px;
+        }
+
+        .technical-sheet strong {
+            font-weight: bold;
+        }
+
+        .technical-sheet a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .technical-sheet a:hover {
+            text-decoration: underline;
+        }
+
+        .all-works-link {
+            margin-top: auto;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .all-works-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ----- PANEL DERECHO (Still y Video) ----- */
+        .right-panel {
+            flex: 1;
+            overflow-y: auto;
+            background-color: #111;
+            scroll-behavior: smooth;
+        }
+
+        .still-image-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .still-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .video-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background-color: #1a1a1a;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16/9;
+            background-color: #000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .video-wrapper iframe, .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                overflow: auto;
+            }
+            .left-panel {
+                width: 100%;
+                min-width: 100%;
+                height: auto;
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+            .right-panel {
+                overflow-y: visible;
+            }
+            .still-image-container {
+                height: 60vh;
+            }
+            .video-container {
+                min-height: auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="left-panel">
+        <div>
+            <!-- Título -->
+            <h1 class="motion-title">Tokenismo, 2026</h1>
+            
+            <!-- Autores / Pseudónimos -->
+            <div class="motion-authors">
+                <a href="#">Emilia Elizabeth López Martínez, Juan Luis Castañeda, Juan José Ambrosio Gómez, Ivan Martínez Mendoza</a>
+            </div>
+
+            <!-- Ficha Técnica -->
+            <div class="technical-sheet">
+                <p>
+                    <strong>Tema:</strong> Abordaje crítico sobre el Tokenismo y la falsa inclusión, cuestionando las prácticas superficiales de diversidad en distintos entornos y cómo se evita el racismo de forma genuina.
+                </p>
+                <p>
+                    <strong>Técnica:</strong> Animación hecha en cavalry, rigging, basada en rubberhose, personajes en vectores.
+                </p>
+                <p>
+                    <strong>Recursos:</strong><br>
+                    - Efectos de sonido: Múltiples librerías de Pixabay y YouTube<br>- Música de fondo: Liminal Deep Ambient (Pixabay)
+                </p>
+                <p>
+                    <strong>Años de producción:</strong> 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- Enlace para volver a la galería -->
+        <a href="index.html" class="all-works-link">All works</a>
+    </div>
+
+    <!-- PANEL DERECHO (Deslizable) -->
+    <div class="right-panel">
+        
+        <!-- Primera vista: Imagen Fija (Still) -->
+        <div class="still-image-container">
+            <img src="img1.jpg" alt="Still de la animación">
+            <div class="scroll-indicator">Desliza para ver el video ↓</div>
+        </div>
+
+        <!-- Segunda vista: Video Incrustado -->
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video width="100%" height="100%" controls poster="https://via.placeholder.com/1920x1080/000/fff?text=Cargando+Video...">
+                    <source src="video1.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
